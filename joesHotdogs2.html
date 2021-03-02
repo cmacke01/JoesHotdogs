@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <meta charset="utf-8"> -->
+  <title> Joes Hotdogs Order Online </title>
+  <style>
+
+      h1 {
+        font-size: 25px;
+      }
+      .descr {
+          position: relative;
+          float: left;
+          width: 40%;
+          display: inline-block;
+      }
+
+      .price {
+          width: 60%;
+          position: relative;
+          float: right;
+          display: inline-block;
+      }
+
+      .discount {
+          width: 100%;
+      }
+  </style>
+</head>
+
+<body>
+  <script language="javascript">
+    hotdogs = parseInt(prompt('How many hotdogs do you want?', 0));
+    fries = parseInt(prompt('How many fries do you want?', 0));
+    sodas = parseInt(prompt('How many sodas do you want?', 0));
+
+    hotdogs_p = hotdogs * 3.25;
+    fries_p = fries * 2;
+    sodas_p = sodas * 1.5;
+
+    subtotal = (hotdogs_p) + (fries_p) + (sodas_p);
+
+    document.write("<h1> Order Summary </h1>");
+
+    document.write(
+        "<div class=descr>" +
+            "hotdogs: " + hotdogs + " x 3.25 = " + "<br>" +
+            "fries: " + fries + " x 2.00 = " + "<br>" +
+            "sodas: " + sodas + " x 1.50 = " + "<br>" +
+        "</div>" +
+
+        "<div class=price>" +
+            hotdogs_p.toFixed(2) + "<br>" +
+            fries_p.toFixed(2) + "<br>" +
+            sodas_p.toFixed(2) + "<br>" +
+        "</div>"
+
+    );
+
+    if (subtotal > 20) {
+      subtotal = subtotal * .9;
+      // subtotal = parseFloat(subtotal.toFixed(2));
+      document.write(
+        "<div class=discount>" +
+            "Order is at least $20! Joe's special discount applied— 10% off! <br> <br>" +
+        "</div>"
+      );
+    }
+
+    tax = subtotal * .0625;
+    total = subtotal + tax;
+    // total = parseFloat(total.toFixed(2));
+    // tax = parseFloat(tax.toFixed(2));
+
+    document.write(
+
+      "<div class=descr>" +
+        "subtotal: <br>" +
+        "tax: <br>" +
+        "total: <br>" +
+      "</div>" +
+
+      "<div class=price>" +
+           subtotal.toFixed(2) + "<br>" +
+           tax.toFixed(2) + "<br>" +
+           total.toFixed(2) + "<br>" +
+      "</div>"
+
+    );
+
+  </script>
+</body>
+
+</html>
